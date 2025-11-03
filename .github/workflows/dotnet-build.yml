@@ -26,5 +26,6 @@ jobs:
           echo "🔢 Run number: ${{ github.run_number }}"
           echo "🌿 Branch: ${{ github.ref }}"
 
+     
       - *echo-template
       
