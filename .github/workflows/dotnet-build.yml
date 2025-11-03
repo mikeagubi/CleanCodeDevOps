@@ -11,6 +11,11 @@ jobs:
       - name: 🔔 start build process
         run: echo "Build process har started..."
 
+      - &echo-template
+        name: Echo template
+        run: echo "This is a reusable step"
+        shell: bash
+
       - name: 📃 show runtime context
         run: |
           echo "🔧 Runner OS: ${{ runner.os }}"
@@ -20,3 +25,6 @@ jobs:
           echo "🥷 Actor: ${{ github.actor }}"
           echo "🔢 Run number: ${{ github.run_number }}"
           echo "🌿 Branch: ${{ github.ref }}"
+
+      - *echo-template
+      
