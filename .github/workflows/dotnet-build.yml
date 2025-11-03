@@ -26,6 +26,25 @@ jobs:
           echo "🔢 Run number: ${{ github.run_number }}"
           echo "🌿 Branch: ${{ github.ref }}"
 
-     
       - *echo-template
+
+  build-project:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Chechout code
+        uses: actions/checkout@v5.0.0
+
+      - name: Install .NET 9
+        uses: actions/setup-dotnet@v5.0.0
+        with:
+          dotnet-version: '9.0.x'
+
+      - name: Build project
+        working-directory: CleanCodeDevOps/CleanCodeDevOps.App
+        run: dotnet build
+
+      - name: Run code
+        run: dotnet run --project CleanCodeDevOps/CleanCodeDevOps.App/CleanCodeDevOps.App.csproj
+  
       
