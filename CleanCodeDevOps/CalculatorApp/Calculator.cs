@@ -8,13 +8,12 @@ public class Calculator
 
     public int Subtract(int a, int b) => a - b;
 
-    public double Multiply(int a, int b) => a * b;
+    public int Multiply(int a, int b) => a * b;
 
 
     public double Divide(int a, int b)
     {
-        if (b == 0)
-            throw new DivideByZeroException();
+        if (b == 0) throw new DivideByZeroException();
         return (double)a / b;
     }
     

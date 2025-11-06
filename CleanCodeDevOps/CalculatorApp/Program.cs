@@ -6,4 +6,4 @@ Console.WriteLine("Hello, World!");
 
 var calc = new Calculator();
 
-Console.WriteLine(calc.Divide(4, 0));
+Console.WriteLine(calc.Divide(4, 3));
