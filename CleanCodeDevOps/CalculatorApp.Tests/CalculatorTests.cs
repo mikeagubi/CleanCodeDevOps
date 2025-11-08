@@ -39,7 +39,7 @@ public class CalculatorTests
     {
         //Arrange
         Calculator sut = new();
-        int a = 3;
+        int a = 3; 
         int b = 4;
         int expected = 12;
 
@@ -57,14 +57,26 @@ public class CalculatorTests
         Calculator sut = new();
         int a = 6;
         int b = 2;
-        int expected = 3;
+        double expected = 3;
 
         //Act
         double actual = sut.Divide(a, b);
 
 
         //Assert
+        Assert.Equal(expected, actual);
     }
     
+    [Fact]
+    public void Divide_ByZero_ThrowDivideByZeroException()
+    {
+        //Arrange
+        Calculator sut = new();
+        int a = 5;
+        int b = 0;
+        
+       //Assert
+       Assert.Throws<DivideByZeroException>(() => sut.Divide(a, b));
+    }
     
 }
