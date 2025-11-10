@@ -75,5 +75,28 @@ public class CalculatorTests
        //Assert
        Assert.Throws<DivideByZeroException>(() => _sut.Divide(a, b));
     }
+
+
+    [Theory]
+    [InlineData(3, 2, 5)]
+    [InlineData(1, 2, 3)]
+    [InlineData(57, 13, 70)]
+    public void CanAdd(int a, int b, int sum)
+    {
+        //Arrange
+        var expected = sum;
+
+        //Act
+        var actual = _sut.Add(a, b);
+
+        //Assert
+        Assert.Equal(expected, actual);
+    }
+    
+    
+    
+    
+    
+    
     
 }
