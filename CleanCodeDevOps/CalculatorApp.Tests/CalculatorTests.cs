@@ -92,11 +92,27 @@ public class CalculatorTests
         //Assert
         Assert.Equal(expected, actual);
     }
-    
-    
-    
-    
-    
-    
-    
+
+    [Theory]
+    [InlineData(10, 2, 5)]
+    [InlineData(9, 3, 3)]
+    [InlineData(7, 1, 7)]
+    [InlineData(5,0, double.NaN)]
+    public void Divide_Returns_Result(int a, int b, double expected)
+    {
+        if (b == 0)
+        {
+            Assert.Throws<DivideByZeroException>(() => _sut.Divide(a, b));
+        }
+        else
+        {
+            var actual = _sut.Divide(a, b);
+            Assert.Equal(expected, actual);
+        }
+        
+    }
+
+
+
+
 }
