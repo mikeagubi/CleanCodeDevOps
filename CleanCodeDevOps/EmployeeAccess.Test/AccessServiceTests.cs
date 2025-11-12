@@ -36,4 +36,15 @@ public class AccessServiceTests
         Assert.Equal(expected, actual);
     }
     
+    
+    //Detta tillhör JsonFile DataCase
+
+    [Theory]
+    [ClassData(typeof(EmployeeAccessTestData))]
+    public void FromJson_CanAccessRestrictedArea_ReturnsExpected(Employee employee, bool expected)
+    {
+        var actual = _sut.CanAccessRestrictedArea(employee);
+        Assert.Equal(expected, actual);
+    }
+    
 }

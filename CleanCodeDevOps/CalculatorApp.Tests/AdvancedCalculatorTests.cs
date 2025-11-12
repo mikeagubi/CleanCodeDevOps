@@ -5,7 +5,7 @@ namespace CalculatorApp.Tests;
 public class AdvancedCalculatorTests : IClassFixture<AdvancedCalculatorFixture>
 {
     private readonly AdvancedCalculatorFixture _calculatorFixture;
-    private readonly AdvancedCalculator _sut;
+    private readonly AdvancedCalculator _sut; 
 
     public AdvancedCalculatorTests(AdvancedCalculatorFixture calculatorFixture)
     {
