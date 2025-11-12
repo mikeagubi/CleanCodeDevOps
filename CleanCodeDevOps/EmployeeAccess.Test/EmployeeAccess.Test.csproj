@@ -22,4 +22,11 @@
       <ProjectReference Include="..\EmployeeAccess\EmployeeAccess.csproj" />
     </ItemGroup>
 
+    <ItemGroup>
+        <None Include="..\EmployeeAccess\TestData\employee_access_cases.json">
+            <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+            <Link>employee_access_cases.json</Link>
+        </None>
+    </ItemGroup>
+
 </Project>
