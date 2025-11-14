@@ -1,0 +1,17 @@
+name: Build-Project
+
+on:
+  workflow_dispatch:
+
+jobs:
+  show-context:
+    runs-on: ubunto-latest
+    steps:
+      - name: Print Github Context
+        run: echo "${{ toJSON(github) }}"
+
+      - name: print Job Context
+        run: echo "${{ toJSON(job) }}"
+
+      - name: Print Runner context
+        run: echo "{{ toJSON(runner) }}"
