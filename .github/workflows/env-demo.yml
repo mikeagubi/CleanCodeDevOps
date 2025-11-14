@@ -32,6 +32,10 @@ jobs:
             echo "STEP_LEVEL is not Available in this step - fallback message shown"
           else "STEP_LEVEL is: $STEL_LEVEL"
           fi
+        
+          echo "Workflow level: $WORKFLOW_LEVEL"
+          echo "job level: $JOB_LEVEL"
+          echo "step level: $STEP_LEVEL"
 
 
             
