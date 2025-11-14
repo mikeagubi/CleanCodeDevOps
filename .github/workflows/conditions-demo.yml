@@ -1,4 +1,4 @@
-name: Contidions Demp
+name: Conditions Demo
 
 on:
   workflow_dispatch:
@@ -6,19 +6,20 @@ on:
 jobs:
   conditional-job:
     runs-on: ubuntu-latest
+
     steps:
       - name: Always runs
-        run: echo "This always is runs"
+        run: echo "This always runs"
 
       - name: Runs only if prev step succeeded
         if: success()
         run: echo "Previous step succeeded"
 
       - name: Simulating a failing step
-        run: | 
-          echo "Step fails Internationally"
+        run: |
+          echo "Step fails intentionally"
           exit 1
 
-      - name: Runs only id the previous step failes
-        if: dailure()
-        run: echo "Previous step fails, therefore I run"
+      - name: Runs only if the previous step failed
+        if: failure()
+        run: echo "Previous step failed, therefore I run"
