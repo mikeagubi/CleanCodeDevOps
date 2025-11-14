@@ -19,6 +19,6 @@ jobs:
 
           
         run: |
-          echo "Workflow level": $WORKFLOW_LEVEL"
-          echo "job level": $JOB_LEVEL"
-          echo "step level": $STEP_LEVEL"
+          echo "Workflow level: $WORKFLOW_LEVEL"
+          echo "job level: $JOB_LEVEL"
+          echo "step level: $STEP_LEVEL"
